@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="PFerreteria" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-TJ74E32\SQLEXPRESS;Initial Catalog=PFerreteria;Integrated Security=True" SettingsObjectName="CData.Properties.Settings" SettingsPropertyName="PFerreteriaConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.tblCiudades" Member="tblCiudades">
+    <Type Name="tblCiudade">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="NombreCiudad" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Association Name="tblCiudade_tblProveedore" Member="tblProveedores" ThisKey="ID" OtherKey="IDciudad" Type="tblProveedore" />
+      <Association Name="tblCiudade_tblEmpleado" Member="tblEmpleados" ThisKey="ID" OtherKey="IDciudad" Type="tblEmpleado" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblDetalles" Member="tblDetalles">
+    <Type Name="tblDetalle">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IDarticulo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CantidadArt" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PrecioArt" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="IDfactura" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="tblArticulo_tblDetalle" Member="tblArticulo" ThisKey="IDarticulo" OtherKey="ID" Type="tblArticulo" IsForeignKey="true" />
+      <Association Name="tblFactura_tblDetalle" Member="tblFactura" ThisKey="IDfactura" OtherKey="ID" Type="tblFactura" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblEstados" Member="tblEstados">
+    <Type Name="tblEstado">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="NombreEstado" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Association Name="tblEstado_tblProveedore" Member="tblProveedores" ThisKey="ID" OtherKey="IDestado" Type="tblProveedore" />
+      <Association Name="tblEstado_tblUsuario" Member="tblUsuarios" ThisKey="ID" OtherKey="IDestado" Type="tblUsuario" />
+      <Association Name="tblEstado_tblEmpleado" Member="tblEmpleados" ThisKey="ID" OtherKey="IDestado" Type="tblEmpleado" />
+      <Association Name="tblEstado_tblArticulo" Member="tblArticulos" ThisKey="ID" OtherKey="IDestado" Type="tblArticulo" />
+      <Association Name="tblEstado_tblFactura" Member="tblFacturas" ThisKey="ID" OtherKey="IDestado" Type="tblFactura" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblProveedores" Member="tblProveedores">
+    <Type Name="tblProveedore">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Codigo" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="NombreProveedor" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Direccion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Telefono" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="IDciudad" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IDestado" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="tblProveedore_tblArticulo" Member="tblArticulos" ThisKey="ID" OtherKey="IDproveedor" Type="tblArticulo" />
+      <Association Name="tblCiudade_tblProveedore" Member="tblCiudade" ThisKey="IDciudad" OtherKey="ID" Type="tblCiudade" IsForeignKey="true" />
+      <Association Name="tblEstado_tblProveedore" Member="tblEstado" ThisKey="IDestado" OtherKey="ID" Type="tblEstado" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblPosiciones" Member="tblPosiciones">
+    <Type Name="tblPosicione">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="NombrePosicion" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Association Name="tblPosicione_tblEmpleado" Member="tblEmpleados" ThisKey="ID" OtherKey="IDposicion" Type="tblEmpleado" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblUsuarios" Member="tblUsuarios">
+    <Type Name="tblUsuario">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UserName" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Contrasena" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="IDempleado" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IDestado" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="tblEstado_tblUsuario" Member="tblEstado" ThisKey="IDestado" OtherKey="ID" Type="tblEstado" IsForeignKey="true" />
+      <Association Name="tblEmpleado_tblUsuario" Member="tblEmpleado" ThisKey="IDempleado" OtherKey="ID" Type="tblEmpleado" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblEmpleados" Member="tblEmpleados">
+    <Type Name="tblEmpleado">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Codigo" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Apellidos" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Cedula" Type="System.String" DbType="VarChar(11)" CanBeNull="true" />
+      <Column Name="Direccion" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Sexo" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="FechaNacimiento" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="FechaRegistro" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IDciudad" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IDestado" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IDposicion" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Telefono" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Association Name="tblEmpleado_tblUsuario" Member="tblUsuarios" ThisKey="ID" OtherKey="IDempleado" Type="tblUsuario" />
+      <Association Name="tblCiudade_tblEmpleado" Member="tblCiudade" ThisKey="IDciudad" OtherKey="ID" Type="tblCiudade" IsForeignKey="true" />
+      <Association Name="tblEstado_tblEmpleado" Member="tblEstado" ThisKey="IDestado" OtherKey="ID" Type="tblEstado" IsForeignKey="true" />
+      <Association Name="tblPosicione_tblEmpleado" Member="tblPosicione" ThisKey="IDposicion" OtherKey="ID" Type="tblPosicione" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblArticulos" Member="tblArticulos">
+    <Type Name="tblArticulo">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Codigo" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="NombreArticulo" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Precio" Type="System.Decimal" DbType="Decimal(6,3)" CanBeNull="true" />
+      <Column Name="Cantidad" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IDproveedor" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IDestado" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="tblArticulo_tblDetalle" Member="tblDetalles" ThisKey="ID" OtherKey="IDarticulo" Type="tblDetalle" />
+      <Association Name="tblEstado_tblArticulo" Member="tblEstado" ThisKey="IDestado" OtherKey="ID" Type="tblEstado" IsForeignKey="true" />
+      <Association Name="tblProveedore_tblArticulo" Member="tblProveedore" ThisKey="IDproveedor" OtherKey="ID" Type="tblProveedore" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblFacturas" Member="tblFacturas">
+    <Type Name="tblFactura">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Fecha" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="NombreFacturado" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="IDestado" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Codigo" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Association Name="tblFactura_tblDetalle" Member="tblDetalles" ThisKey="ID" OtherKey="IDfactura" Type="tblDetalle" />
+      <Association Name="tblEstado_tblFactura" Member="tblEstado" ThisKey="IDestado" OtherKey="ID" Type="tblEstado" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

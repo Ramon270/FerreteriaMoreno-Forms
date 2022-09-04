@@ -1,0 +1,10 @@
+C:\Users\Ramón\Desktop\Septiembre-Diciembre 2020\Programacion media\ProyectoFinal\CNegocio\bin\Debug\CNegocio.dll
+C:\Users\Ramón\Desktop\Septiembre-Diciembre 2020\Programacion media\ProyectoFinal\CNegocio\bin\Debug\CNegocio.pdb
+C:\Users\Ramón\Desktop\Septiembre-Diciembre 2020\Programacion media\ProyectoFinal\CNegocio\bin\Debug\CData.dll
+C:\Users\Ramón\Desktop\Septiembre-Diciembre 2020\Programacion media\ProyectoFinal\CNegocio\bin\Debug\CData.pdb
+C:\Users\Ramón\Desktop\Septiembre-Diciembre 2020\Programacion media\ProyectoFinal\CNegocio\obj\Debug\CNegocio.csprojAssemblyReference.cache
+C:\Users\Ramón\Desktop\Septiembre-Diciembre 2020\Programacion media\ProyectoFinal\CNegocio\obj\Debug\CNegocio.csproj.CoreCompileInputs.cache
+C:\Users\Ramón\Desktop\Septiembre-Diciembre 2020\Programacion media\ProyectoFinal\CNegocio\obj\Debug\CNegocio.csproj.CopyComplete
+C:\Users\Ramón\Desktop\Septiembre-Diciembre 2020\Programacion media\ProyectoFinal\CNegocio\obj\Debug\CNegocio.dll
+C:\Users\Ramón\Desktop\Septiembre-Diciembre 2020\Programacion media\ProyectoFinal\CNegocio\obj\Debug\CNegocio.pdb
+C:\Users\Ramón\Desktop\Septiembre-Diciembre 2020\Programacion media\ProyectoFinal\CNegocio\bin\Debug\CData.dll.config

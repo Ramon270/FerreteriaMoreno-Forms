@@ -1,0 +1,7 @@
+C:\Users\Ramón\Desktop\Septiembre-Diciembre 2020\Programacion media\ProyectoFinal\CData\bin\Debug\CData.dll
+C:\Users\Ramón\Desktop\Septiembre-Diciembre 2020\Programacion media\ProyectoFinal\CData\bin\Debug\CData.pdb
+C:\Users\Ramón\Desktop\Septiembre-Diciembre 2020\Programacion media\ProyectoFinal\CData\obj\Debug\CData.csprojAssemblyReference.cache
+C:\Users\Ramón\Desktop\Septiembre-Diciembre 2020\Programacion media\ProyectoFinal\CData\obj\Debug\CData.csproj.CoreCompileInputs.cache
+C:\Users\Ramón\Desktop\Septiembre-Diciembre 2020\Programacion media\ProyectoFinal\CData\obj\Debug\CData.dll
+C:\Users\Ramón\Desktop\Septiembre-Diciembre 2020\Programacion media\ProyectoFinal\CData\obj\Debug\CData.pdb
+C:\Users\Ramón\Desktop\Septiembre-Diciembre 2020\Programacion media\ProyectoFinal\CData\bin\Debug\CData.dll.config
